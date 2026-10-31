@@ -1,4 +1,4 @@
-# AI 导航
+# AI Atlas
 自用 AI 工具导航。纯静态，GitHub Pages 免费托管，本地双击 index.html 也能离线用。
 
 - 加链接：改 `links.js`（GitHub 网页上点铅笔就能改），或在页面点「＋ 添加」（只存本浏览器），再点「导出」把新 links.js 传上来。
