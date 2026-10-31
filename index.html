@@ -1,77 +1,87 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Atlas</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+<title>AI Atlas · AI 工具导航</title>
+<meta name="description" content="AI Atlas：精选 AI 视频、图像、大模型、Agent、自媒体与出海工具导航">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%236d5dfc'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>A</text></svg>">
 <style>
-:root{--bg:#0e1116;--card:#161b22;--line:#262c36;--fg:#e6edf3;--mut:#8b949e;--acc:#7ee787}
-*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--fg)}
+:root{--bg:#f6f7fb;--card:#fff;--fg:#0f172a;--mut:#64748b;--line:#e6e8f0;--acc:#6d5dfc;--acc2:#22c3ee;--sh:0 1px 2px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.05);--shh:0 10px 30px rgba(109,93,252,.18)}
+@media(prefers-color-scheme:dark){:root{--bg:#0b0d14;--card:#141824;--fg:#e8ebf4;--mut:#8a93a8;--line:#232a3b;--sh:none;--shh:0 10px 30px rgba(109,93,252,.25)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--fg)}
 a{color:inherit;text-decoration:none}
-.wrap{display:flex;min-height:100vh}
-nav{width:170px;flex:none;border-right:1px solid var(--line);padding:18px 10px;position:sticky;top:0;height:100vh;overflow:auto}
-nav h1{font-size:18px;margin:0 8px 14px}
-nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--mut)}nav a:hover{background:var(--card);color:var(--fg)}
-main{flex:1;padding:18px 28px 60px;max-width:1300px}
-.top{display:flex;gap:10px;align-items:center;position:sticky;top:0;background:var(--bg);padding:6px 0 14px;z-index:2}
-#q{flex:1;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:15px;outline:none}
-#q:focus{border-color:var(--acc)}
-button{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
-button:hover{border-color:var(--acc)}
-h2{font-size:15px;margin:26px 0 10px;color:var(--mut);font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.it{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px;position:relative}
-.it:hover{border-color:var(--acc);transform:translateY(-1px)}
-.ic{width:28px;height:28px;border-radius:7px;flex:none;background:#30363d;display:grid;place-items:center;font-weight:700;overflow:hidden}
-.ic img{width:20px;height:20px}
-.nm{font-weight:600}.ds{color:var(--mut);font-size:12px;margin-top:2px}
-.aff{position:absolute;right:8px;top:8px;font-size:10px;color:var(--acc);border:1px solid var(--acc);border-radius:5px;padding:0 4px}
-.x{position:absolute;right:6px;bottom:4px;color:var(--mut);font-size:12px;display:none}.it:hover .x{display:block}
-dialog{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:12px;width:360px}
-dialog input{width:100%;margin:5px 0;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
-.empty{color:var(--mut);padding:30px 0}
-@media(max-width:700px){nav{display:none}main{padding:12px}}
+.hero{position:relative;overflow:hidden;padding:64px 20px 36px;text-align:center}
+.hero:before{content:"";position:absolute;inset:-40% -10% auto;height:520px;background:radial-gradient(40% 50% at 30% 40%,rgba(109,93,252,.28),transparent 70%),radial-gradient(35% 45% at 70% 35%,rgba(34,195,238,.22),transparent 70%);filter:blur(20px);z-index:-1}
+.logo{display:inline-flex;align-items:center;gap:12px;font-size:44px;font-weight:800;letter-spacing:-1px}
+.logo i{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;color:#fff;font-style:normal;font-size:26px;box-shadow:var(--shh)}
+.logo span{background:linear-gradient(90deg,var(--fg),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);margin:8px 0 26px}
+.search{max-width:640px;margin:0 auto;position:relative}
+.search input{width:100%;padding:16px 20px 16px 50px;font-size:16px;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--fg);box-shadow:var(--sh);outline:none;transition:.2s}
+.search input:focus{border-color:var(--acc);box-shadow:0 0 0 4px rgba(109,93,252,.15)}
+.search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.search kbd{position:absolute;right:16px;top:50%;transform:translateY(-50%);font:12px monospace;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+.chips{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.chips div{max-width:1200px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:12px 20px;scrollbar-width:none}
+.chips a{white-space:nowrap;padding:6px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;color:var(--mut);transition:.15s}
+.chips a:hover,.chips a.on{color:#fff;background:var(--acc);border-color:var(--acc)}
+main{max-width:1200px;margin:0 auto;padding:8px 20px 60px}
+h2{font-size:18px;margin:34px 0 14px;display:flex;align-items:center;gap:8px}
+h2 small{font-weight:400;color:var(--mut);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.it{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;position:relative;box-shadow:var(--sh);transition:transform .18s,box-shadow .18s,border-color .18s}
+.it:hover{transform:translateY(-3px);box-shadow:var(--shh);border-color:rgba(109,93,252,.45)}
+.ic{width:44px;height:44px;flex:none;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;font-weight:700;color:var(--acc)}
+.ic img{width:28px;height:28px;object-fit:contain}
+.tx{min-width:0}.nm{font-weight:650}.ds{color:var(--mut);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aff{position:absolute;right:10px;top:10px;font-size:11px;color:var(--acc);background:rgba(109,93,252,.1);border-radius:6px;padding:1px 6px}
+.x{position:absolute;right:10px;bottom:8px;color:var(--mut);font-size:12px;display:none}.it:hover .x{display:block}
+.empty{color:var(--mut);text-align:center;padding:40px 0}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 20px 50px}
+footer button{background:none;border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:5px 10px;margin:0 4px;cursor:pointer}
+dialog{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:16px;width:380px;box-shadow:var(--shh)}
+dialog input{width:100%;margin:6px 0;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+dialog button{border:0;border-radius:10px;padding:8px 16px;cursor:pointer;background:var(--line);color:var(--fg)}dialog button[value=ok]{background:var(--acc);color:#fff}
+@media(max-width:600px){.logo{font-size:34px}.hero{padding:44px 16px 26px}.grid{grid-template-columns:1fr 1fr;gap:10px}.it{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}.ds{white-space:normal}}
 </style></head><body>
-<div class="wrap"><nav id="side"><h1>🧭 AI Atlas</h1></nav>
-<main><div class="top"><input id="q" placeholder="搜索名称、用途…（按 / 聚焦，回车打开第一个）" autocomplete="off">
-<button id="add">＋ 添加</button><button id="exp" title="把本地新增的链接导出成 links.js">导出</button></div>
-<div id="list"></div></main></div>
-<dialog id="dlg"><form method="dialog" id="f">
-<b>添加链接</b><input name="name" placeholder="名称" required><input name="url" placeholder="https://…" required>
+<header class="hero">
+ <div class="logo"><i>A</i><span>AI Atlas</span></div>
+ <p class="sub">精选 AI 工具地图 · 视频 / 图像 / 大模型 / Agent / 自媒体 / 出海</p>
+ <div class="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+ <input id="q" placeholder="搜工具、用途…  回车直接打开" autocomplete="off"><kbd>/</kbd></div>
+</header>
+<nav class="chips"><div id="chips"></div></nav>
+<main id="list"></main>
+<footer>AI Atlas · 持续更新 <br><br><button id="add">＋ 添加链接</button><button id="exp">导出 links.js</button></footer>
+<dialog id="dlg"><form method="dialog" id="f"><b>添加链接</b>
+<input name="name" placeholder="名称" required><input name="url" placeholder="https://…" required>
 <input name="desc" placeholder="用途（可选）"><input name="cat" placeholder="分类（默认：我的收藏）">
-<div style="text-align:right;margin-top:8px"><button value="cancel" formnovalidate>取消</button> <button value="ok">保存</button></div></form></dialog>
+<div style="text-align:right;margin-top:10px"><button value="cancel" formnovalidate>取消</button> <button value="ok">保存</button></div></form></dialog>
 <script src="links.js"></script>
 <script>
-const LS=k=>JSON.parse(localStorage.getItem(k)||"null"), SS=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-let local=LS("nav_local")||[], hits=LS("nav_hits")||{};
-function all(){const d=JSON.parse(JSON.stringify(window.NAV||[]));
- local.forEach(x=>{let c=d.find(c=>c.cat===x.cat);if(!c){c={cat:x.cat,icon:"⭐",items:[]};d.unshift(c)}c.items.push({...x,_local:1})});return d}
+const LS=k=>JSON.parse(localStorage.getItem(k)||"null"),SS=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+let local=LS("nav_local")||[],hits=LS("nav_hits")||{},first=null;
 const host=u=>{try{return new URL(u).hostname}catch(e){return""}};
-function card(i){const a=document.createElement("a");a.className="it";a.href=i.aff||i.url;a.target="_blank";a.rel="noopener";
- const h=host(i.url);a.innerHTML=`<div class="ic">${(i.name||"?")[0]}</div><div><div class="nm"></div><div class="ds"></div></div>${i.aff?'<span class="aff">推荐</span>':''}${i._local?'<span class="x" title="删除">✕</span>':''}`;
+function all(){const d=JSON.parse(JSON.stringify(window.NAV||[]));local.forEach(x=>{let c=d.find(c=>c.cat===x.cat);if(!c){c={cat:x.cat,icon:"⭐",items:[]};d.push(c)}c.items.push({...x,_local:1})});return d}
+function card(i){const a=document.createElement("a"),h=host(i.url);a.className="it";a.href=i.aff||i.url;a.target="_blank";a.rel="noopener";
+ a.innerHTML=`<div class="ic">${(i.name||"?")[0]}</div><div class="tx"><div class="nm"></div><div class="ds"></div></div>${i.aff?'<span class="aff">推荐</span>':''}${i._local?'<span class="x">删除</span>':''}`;
  a.querySelector(".nm").textContent=i.name;a.querySelector(".ds").textContent=i.desc||h;
- const img=new Image();img.onload=()=>{const ic=a.querySelector(".ic");ic.textContent="";ic.appendChild(img)};img.src=`https://icons.duckduckgo.com/ip3/${h}.ico`;
- a.onclick=e=>{if(e.target.classList.contains("x")){e.preventDefault();local=local.filter(x=>x.url!==i.url);SS("nav_local",local);render();return}
-  hits[i.url]=(hits[i.url]||0)+1;SS("nav_hits",hits)};return a}
-function sec(title,items,id){if(!items.length)return;const L=document.getElementById("list");
- const h=document.createElement("h2");h.id=id||"";h.textContent=title;L.appendChild(h);
- const g=document.createElement("div");g.className="grid";items.forEach(i=>g.appendChild(card(i)));L.appendChild(g)}
-let first=null;
+ const img=new Image();img.alt="";img.onload=()=>{const ic=a.querySelector(".ic");ic.textContent="";ic.appendChild(img)};
+ img.onerror=()=>{if(!img.dataset.r){img.dataset.r=1;img.src=`https://icons.duckduckgo.com/ip3/${h}.ico`}};img.src=`icons/${h}.png`;
+ a.onclick=e=>{if(e.target.classList.contains("x")){e.preventDefault();local=local.filter(x=>x.url!==i.url);SS("nav_local",local);render();return}hits[i.url]=(hits[i.url]||0)+1;SS("nav_hits",hits)};return a}
+function sec(t,items,id,n){if(!items.length)return;const L=document.getElementById("list"),h=document.createElement("h2");if(id)h.id=id;h.innerHTML=`${t} <small>${n??items.length}</small>`;L.appendChild(h);const g=document.createElement("div");g.className="grid";items.forEach(i=>g.appendChild(card(i)));L.appendChild(g)}
 function render(){const q=document.getElementById("q").value.trim().toLowerCase(),d=all(),L=document.getElementById("list");L.innerHTML="";first=null;
  const flat=d.flatMap(c=>c.items.map(i=>({...i,cat:c.cat})));
- if(q){const r=flat.filter(i=>[i.name,i.desc,i.url,i.cat,(i.tags||[]).join(" ")].join(" ").toLowerCase().includes(q));
-  r.sort((a,b)=>(hits[b.url]||0)-(hits[a.url]||0));first=r[0];sec(`搜索结果（${r.length}）`,r);if(!r.length)L.innerHTML='<div class="empty">没找到，按「＋ 添加」收进来</div>';return}
- const top=flat.filter(i=>hits[i.url]).sort((a,b)=>hits[b.url]-hits[a.url]).slice(0,8);
- const pin=flat.filter(i=>i.pin&&!top.includes(i));
- sec("⚡ 常用",[...top,...flat.filter(i=>i.pin&&!top.some(t=>t.url===i.url))].slice(0,12),"c-top");
- d.forEach((c,n)=>sec(`${c.icon||""} ${c.cat}`,c.items,"c"+n));
- const S=document.getElementById("side");S.querySelectorAll("a").forEach(a=>a.remove());
- [{cat:"常用",icon:"⚡",id:"c-top"},...d.map((c,n)=>({...c,id:"c"+n}))].forEach(c=>{const a=document.createElement("a");a.href="#"+c.id;a.textContent=`${c.icon||""} ${c.cat}`;S.appendChild(a)})}
+ if(q){const r=flat.filter(i=>[i.name,i.desc,i.url,i.cat,(i.tags||[]).join(" ")].join(" ").toLowerCase().includes(q)).sort((a,b)=>(hits[b.url]||0)-(hits[a.url]||0));first=r[0];
+  if(r.length)sec("🔍 搜索结果",r);else L.innerHTML='<div class="empty">没找到，试试别的词</div>';return}
+ const top=flat.filter(i=>hits[i.url]).sort((a,b)=>hits[b.url]-hits[a.url]),fav=[...top,...flat.filter(i=>i.pin&&!top.some(t=>t.url===i.url))].slice(0,8);
+ sec("⚡ 常用",fav,"c-top");d.forEach((c,n)=>sec(`${c.icon||""} ${c.cat}`,c.items,"c"+n));
+ const C=document.getElementById("chips");C.innerHTML="";[{cat:"常用",icon:"⚡",id:"c-top"},...d.map((c,n)=>({...c,id:"c"+n}))].forEach(c=>{const a=document.createElement("a");a.href="#"+c.id;a.textContent=`${c.icon||""} ${c.cat}`;C.appendChild(a)})}
 const q=document.getElementById("q");q.oninput=render;
 q.onkeydown=e=>{if(e.key==="Enter"&&first){hits[first.url]=(hits[first.url]||0)+1;SS("nav_hits",hits);open(first.aff||first.url,"_blank")}if(e.key==="Escape"){q.value="";render()}};
 document.addEventListener("keydown",e=>{if(e.key==="/"&&document.activeElement!==q){e.preventDefault();q.focus()}});
 const dlg=document.getElementById("dlg");document.getElementById("add").onclick=()=>dlg.showModal();
-dlg.onclose=()=>{if(dlg.returnValue!=="ok")return;const f=new FormData(document.getElementById("f"));
- local.push({name:f.get("name"),url:f.get("url"),desc:f.get("desc"),cat:f.get("cat")||"我的收藏"});SS("nav_local",local);document.getElementById("f").reset();render()};
-document.getElementById("exp").onclick=()=>{const d=all().map(c=>({...c,items:c.items.map(({_local,...i})=>i)}));
- const b=new Blob(["window.NAV = "+JSON.stringify(d,null,1)+";\n"],{type:"text/javascript"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="links.js";a.click()};
-render();
+dlg.onclose=()=>{if(dlg.returnValue!=="ok")return;const f=new FormData(document.getElementById("f"));local.push({name:f.get("name"),url:f.get("url"),desc:f.get("desc"),cat:f.get("cat")||"我的收藏"});SS("nav_local",local);document.getElementById("f").reset();render()};
+document.getElementById("exp").onclick=()=>{const d=all().map(c=>({...c,items:c.items.map(({_local,...i})=>i)}));const b=new Blob(["window.NAV = "+JSON.stringify(d,null,1)+";\n"],{type:"text/javascript"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="links.js";a.click()};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)document.querySelectorAll(".chips a").forEach(a=>a.classList.toggle("on",a.hash==="#"+e.target.id))}),{rootMargin:"-80px 0px -70% 0px"});
+render();document.querySelectorAll("h2[id]").forEach(h=>io.observe(h));
 </script></body></html>

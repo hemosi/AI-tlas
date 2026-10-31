@@ -1,7 +1,7 @@
 // 在这里加链接：{ name, url, desc, tags, aff(可选:你的邀请/返利链接), pin(可选:置顶常用) }
 window.NAV = [
  { cat: "视频生成", icon: "🎬", items: [
-  { name: "RunningHub", url: "https://www.runninghub.cn/", desc: "H3 / Wan / ComfyUI 云端跑，币多多会员", pin: true, aff: "" },
+  { name: "RunningHub", url: "https://www.runninghub.cn/", desc: "H3 / Wan / ComfyUI 云端跑", pin: true, aff: "" },
   { name: "海螺 AI", url: "https://hailuoai.com/", desc: "MiniMax 官方视频" },
   { name: "即梦", url: "https://jimeng.jianying.com/", desc: "字节 Seedance 视频/生图" },
   { name: "可灵", url: "https://app.klingai.com/cn/", desc: "快手视频模型" },
